@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags: description, charset and viewport -->
+    <meta charset="UTF-8">
+    <meta name="description" content="This is the Final Project of Phuong Anh Hoang">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <!-- Links to external files -->
+    <link rel="icon" href="images/Signature.png">
+    <link rel="stylesheet" href="css/finalProject.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<!-- Start of body -->
+<body>
+    <!-- Side parts of website -->
+    <!-- Move to top button that appears after scrolling down -->
+    <div id="to-top">
+        <a href="#top"><i class="fas fa-arrow-up"></i></a>
+    </div>
+
+    <!-- Cart div -->
+    <div class="cart">
+        <h2>Your Cart</h2>
+        <hr>
+        <div id="cart-message"></div>
+        <div id="cart-items"></div>
+        <div id="price"></div>
+        <div id="btn-container">
+            <button id="buy" onclick="buy();">Buy now</button>
+            <button id="close-cart" onclick="closeCart();">Close</button>
+        </div>
+    </div>
+
+    <!-- Black backdrop behind cart -->
+    <div class="backdrop" onclick="closeCart();"></div>
+
+    <!-- Start of header section -->
+    <header>
+        <!-- Menu button that appears in mobile design -->
+        <span class="menu-btn" onclick="showMenu();">
+            <i id="switch-icon" class="fas fa-bars"></i>
+        </span>
+
+        <!-- Contact info and nav that appears in desktop design -->
+        <section class="responsive-hide">
+            <div class="contact-icon">
+                <a href="tel:0123456789"><i class="fas fa-mobile"></i> 0123456789</a> <br/>
+                <a href="mailto:p_hoang123209@fanshaweonline.ca"><i class="fa fa-envelope"></i>  p_hoang123209@fanshaweonline.ca</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Special deals</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">About us</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <!-- Logo and buttons (search and show cart) -->
+        <img src="images/Signature.png" alt="store-logo" class="header-logo">
+        <span class="header-icon">
+            <i class="fas fa-search" onclick="search()"></i></i>
+            <i class="fas fa-shopping-cart" onclick="displayCart();"></i>
+        </span>
+    </header>
+    <!-- End of header -->
+
+    <!-- Menu to appear in mobile design -->
+    <div id="hiddenMenu" class="unshown">
+        <li><a href="#" class="active">home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Special deals</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#" class="no-border">About us</a></li>
+    </div>
+
+    <!-- Search section that appears when clicking on search icon -->
+    <section class="search">
+        <div id="search-input">
+            <p>What are you looking for: </p>
+            <form>
+                <input type="text" id="keyword" name="keyword" placeholder="Your item...">
+                <br/>
+                <input type="radio" id="item-id" name="search-type" value="item-id" checked="checked">
+                <label for="item-id">Product ID</label>
+                <input type="radio" id="item-name" name="search-type" value="item-name">
+                <label for="item-id">Product Name</label>
+            </form>
+            <button id="search-btn" onclick="searchItem()">Search</button>
+        </div>
+        <div class="search-result"></div>
+    </section>
+
+    <!-- Cover slide -->
+    <div class="cover-div">
+        <div class="cover-container">
+            <article class="cover-slide1">
+                <div class="info">
+                    <h1>Summer sale</h1>
+                    <p>Get up to <strong>50%</strong> off for your shopping items!</p>
+                    <button>Shop now</button>
+                </div>
+            </article>
+            <article class="cover-slide2">
+                <div class="info">
+                    <h1>New Year Offer</h1>
+                    <p>Get up to <strong>50%</strong> off for your shopping items!</p>
+                    <button>Shop now</button>
+                </div>
+            </article>
+            <article class="cover-slide3">
+                <div class="info">
+                    <h1>Summer sale</h1>
+                    <p>Get up to <strong>50%</strong> off for your shopping items!</p>
+                    <button>Shop now</button>
+                </div>
+            </article>
+        </div>
+
+        <!-- Dots to switch between images of cover slide -->
+        <div class="dots">
+            <span id="dot1" class="dot current"></span>
+            <span id="dot2" class="dot"></span>
+            <span id="dot3" class="dot"></span>
+        </div>
+    </div>
+
+    <!-- Start of introduction section -->
+    <div class="introduction">
+        <!-- Section to display date -->
+        <div id="today"></div>
+
+        <!-- Section to choose currency -->
+        <div class="currency blue-shadow">
+            <h2>CURRENCY</h2>
+            <hr>
+            <p>We support your currency:</p>
+            <div class="currency-display">
+                <img src="images/flags/can.png" alt="Currency Canadian dollars" id="country">
+                <select name="currency" id="currency" onchange="changeCurrency();">
+                    <option>cad</option>
+                    <option>usd</option>
+                    <option>gbp</option>
+                </select>
+            </div>
+            <div class="zoom-container">
+                <h2>OUR STORE</h2>
+                <div class="store category"></div>
+            </div>
+        </div>
+
+        <!-- Section displaying services -->
+        <div class="services blue-shadow">
+            <div class="service-top">
+                <div class="service-left">
+                    <i class="fas fa-truck"></i>
+                    <h4>free delivery</h4>
+                    <p>worldwide</p>
+                </div>
+                <div class="service-right">
+                    <i class="fas fa-info-circle"></i>
+                    <h4>24/7 support</h4>
+                    <p>customer support</p>
+                </div>
+            </div>
+            <div class="service-bottom">
+                <div class="service-left">
+                    <i class="fab fa-cc-mastercard"></i>
+                    <h4>payment</h4>
+                    <p>secure system</p>
+                </div>
+                <div class="service-right">
+                    <i class="fas fa-trophy"></i>
+                    <h4>trusted</h4>
+                    <p>enuine products</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Best seller section -->
+        <div class="best-seller blue-shadow">
+            <h2>BEST SELLERS</h2>
+            <hr>
+            <div class="products">
+                <div class="item-slide">
+                    <section class="item slide">
+                        <img src="images/men/msu01.jpg" alt="casual veston">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/women/wdr01.jpg" alt="black dress">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/women/wof01.jpg" alt="women casual outfit">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/kids/kof02.jpg" alt="camp outfit">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/men/mj01.jpg" alt="grey jeans">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/kids/kshi02.jpg" alt="shirt for boys">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/women/wof02.jpg" alt="women event outfit">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/women/wsho01.jpg" alt="women sport shoes">
+                    </section>
+                    <section class="item slide">
+                        <img src="images/men/mshi01.jpg" alt="milk t-shirt">
+                    </section>
+                </div>
+                <a class="prev" onclick="previousSlide();">&#10094;</a>
+                <a class="next" onclick="nextSlide();">&#10095;</a>
+            </div>
+        </div>
+    </div>
+    <!-- End of introduction section -->
+
+    <!-- Start of main section -->
+    <main>
+        <!-- Section to choose items category to display -->
+        <div class="categories blue-shadow">
+            <div class="zoom-container">
+                <h2>MEN FASHION</h2>
+                <div id="men" class="category" onclick="viewCategory('men');"></div>
+            </div>
+            <div class="zoom-container">
+                <h2>WOMEN FASHION</h2>
+                <div id="women" class="category" onclick="viewCategory('women');"></div>
+            </div>
+            <div class="zoom-container">
+                <h2>KIDS FASHION</h2>
+                <div id="kids" class="category" onclick="viewCategory('kids');"></div>
+            </div>
+        </div>
+
+        <!-- Section to display selected category in table format -->
+        <div class="blue-shadow view-category">
+            <span class="close" onclick="this.parentElement.classList.remove('show');">
+                <i class="fas fa-times"></i>
+            </span>
+            <h2 class="category-name"></h2>
+            <hr>
+
+            <!-- Table to display selected category -->
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <th class="cellId">ID</th>
+                        <th class="cellName">Name</th>
+                        <th class="cellPrice">Price</th>
+                        <th class="cellQuantity">In stock</th>
+                        <th class="cellMax">Max per customer</th>
+                        <th class="cellDescription">Description</th>
+                        <th class="cellReviews">Reviews</th>
+                        <th class="cellImage">Image</th>
+                        <th class="cellIcon"></th>
+                    </thead>
+                    <tbody id="category-to-display"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section to display all items per category -->
+        <div class="men-fashion blue-shadow">
+            <h2>MEN FASHION</h2>
+            <hr>
+            <div class="category-products">
+            </div>
+        </div>
+        <div class="women-fashion blue-shadow">
+            <h2>WOMEN FASHION</h2>
+            <hr>
+            <div class="category-products">
+            </div>
+        </div>
+        <div class="kids-fashion blue-shadow">
+            <h2>KIDS FASHION</h2>
+            <hr>
+            <div class="category-products">
+            </div>
+        </div>
+    </main> 
+    <!-- End of main section -->
+
+    <!-- Start of footer -->
+    <footer>
+        <!-- Subscription section -->
+        <article class="subscribe">
+            <section class="subscription">
+                <h2>Subscribe for new updates</h2>
+                <p>To receive notifications whenever we publish something new, click on the red bell icon in the bottom right hand corner of any page on the site</p>
+            </section>
+            <section class="submission">
+                <input type="text" placeholder="p_hoang123209@fanshaweonline.ca" class="sub-mail">
+                <button>Submit</button>
+            </section>
+        </article>
+
+        <!-- About us and service section -->
+        <article class="about-us">
+            <section class="footer-right">
+                <img src="images/Signature.png" alt="store-logo" class="footer-logo">
+                <p class="description">
+                    Fashion is big global business. You can check the labels on your clothes to see which countries they are made in. Some clothing manufacturers have been accused of employing children and of allowing unsafe conditions in their factories.
+                </p>
+                <div class="media">
+                    <div class="social-media">
+                        <p class="footer-title">follow us</p>
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                </div>
+            </section>
+            <section class="service-menu">
+                <div class="footer-menu">
+                    <p class="footer-title">categories</p>
+                    <li><a href="#">Men Fashion</a></li>
+                    <li><a href="#">Women Fashion</a></li>
+                    <li><a href="#">Kids Fashion</a></li>
+                    <li><a href="#">Special Deals</a></li>
+                    <li><a href="#">Assecories</a></li>
+                </div>
+                <div class="footer-menu">
+                    <p class="footer-title">my account</p>
+                    <li><a href="#">Orders</a></li>
+                    <li><a href="#">Wishlist</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Help</a></li>
+                </div>
+                <div class="footer-menu">
+                    <p class="footer-title">policy</p>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">FAQs</a></li>
+                </div>
+                <div class="footer-menu">
+                    <p class="footer-title">contact us</p>
+                    <p class="contact-info">
+                        Address:<br/>
+                        <address>
+                            Fanshawe College,<br/>
+                            My street, My city,<br/>
+                            My state, My country
+                        </address> 
+                    </p>
+                    <p class="contact-info">
+                        Phone no.:<br/>  
+                        <a href="tel:0123456789">(+1) 0123.456.789</a><br/>
+                        <a href="tel:0987654321" class="incline">(+1) 0987.654.321</a><br/>
+                        Or send us a <a href="mailto:p_hoang123209@fanshaweonline.ca">mail</a>
+                    </p>
+                </div>
+            </section>
+        </article>
+
+        <!-- Copyright section -->
+        <section class="copyright">
+            <p>Copyright © 2021 Phuong Anh Hoang.  All rights reserved.</p>
+            <div class="payment-accepted">
+                <img src="images/payment/visa.png" alt="visa-card" class="cards">
+                <img src="images/payment/master.png" alt="master-card" class="cards">
+                <img src="images/payment/american.png" alt="american-express-card" class="cards">
+                <img src="images/payment/discover.png" alt="discover-card" class="cards">
+                <img src="images/payment/paypal.jpg" alt="paypal" class="cards">
+            </div>
+        </section>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- Links to javascript files -->
+    <script type="text/javascript" src="js/finalProject.js"></script>
+    <script type="text/javascript" src="js/design.js"></script>
+</body>
+</html>

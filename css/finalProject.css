@@ -1,0 +1,1632 @@
+/* Reset margins and paddings and set basic styles */
+* {
+    margin: 0px; 
+    padding: 0px;
+    text-decoration: none;
+    list-style: none;
+    font-family: Quicksand, sans-serif;
+}
+
+/* General styles */
+/* General font size for paragraph and span element */
+p, span {
+    font-size: 14px;
+    color: #AF4640;
+}
+
+/* Color for header elements */
+h2, h4 {
+    color: #AF4640;
+}
+
+/* General style for icons */
+i.fa, i.fas {
+    color: #EEA47FFF;
+    font-size: 20px;
+    margin: 1%;
+}
+
+/* Style for hr elements */
+hr {
+    width: 100px;
+    border: none;
+    height: 2px;
+    background-color: #00539CFF;
+    margin-top: 6px;
+}
+
+/* Style for arrow for moving to top */
+#to-top {
+    display: block;
+    max-width: 20px;
+    padding: 10px 12px;
+    background-color: rgba(0, 83, 156, 0.6);
+    border: 1px solid #EEA47FFF;
+    border-radius: 10px;
+    position: fixed;
+    right: 5px;
+    bottom: 20%;
+}
+
+#to-top:hover {
+    background-color: #AF4640;
+    transition: 0.4s;
+}
+
+/* Start of style for cart div */
+/* Style for container div */
+.cart {
+    width: 350px;
+    height: 450px;
+    overflow: scroll;
+    padding: 5%;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 101;
+    background-image: url("../images/cover/background.jpg");
+    background-size: cover;
+    display: none;
+}
+
+/* Style for cart items */
+#cart-items {
+    width: 100%;
+    margin-top: 3%;
+}
+
+.cart-item {
+    display: flex;
+    width: 100%;
+    height: 111px;
+    margin: auto;
+    margin-bottom: 3%;
+    border: 2px solid #EEA47FFF;
+    border-radius: 10px;
+    position: relative;
+    background-color: lavender;
+}
+
+.cart-item:last-child {
+    margin-bottom: 0%;
+}
+
+.cart-info {
+    margin-left: 15px;
+}
+
+.cart-info h5 {
+    color: #00539CFF;
+    margin: 5px 0px;
+}
+
+.cart-img {
+    margin: 5px;
+    position: absolute;
+    right: 0px;
+}
+
+.cart-img img {
+    width: 80px;
+    border-radius: 10px;
+    border: 1px solid #EEA47FFF;
+}
+
+/* Style for price section */
+#price {
+    margin-top: 15px;
+    width: auto;
+    padding: 5px 0px;
+    float: right;
+    border-top: 1px dotted #00539CFF;
+}
+
+#price p {
+    padding: 0px 15px;
+}
+
+#price p:last-child {
+    display: block;
+    padding-right: 15px;
+    border-top: 1px dotted #00539CFF;
+}
+
+/* Style for buttons in cart div */
+#btn-container {
+    float: right;
+    margin-top: 10px;
+    margin-left: 151px;
+}
+
+#buy, #close-cart, #search-btn {
+    width: 80px;
+    padding: 5px 10px;
+    margin: 2px;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: 0.4s;
+    background-color: lavender;
+    outline: none;
+    cursor: pointer;
+}
+
+#buy, #search-btn {
+    color: #00539CFF;
+    border: 2px solid #00539CFF;
+}
+
+#buy:hover, #search-btn:hover {
+    color: #EEA47FFF;
+    border: 2px solid #EEA47FFF;
+    background-color: #00539CFF;
+    transition: 0.4s;
+}
+
+#close-cart {
+    color: #AF4640;
+    border: 2px solid #AF4640;
+}
+
+#close-cart:hover {
+    color: #EEA47FFF;
+    border: 2px solid #EEA47FFF;
+    background-color: #AF4640;
+}
+
+/* Style for backdrop of cart */
+.backdrop {
+    background-color: rgba(2, 2, 2, 0.6);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.6s ease-in-out;
+}
+
+.appear {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.6s ease-in-out;
+}
+
+/* Start of style for search section */
+.search {
+    display: none;
+    height: auto;
+    width: 100%;
+}
+
+#search-input {
+    width: 85%;
+    padding: 15px 30px;
+    display: inline-block;
+}
+
+.search-result {
+    width: 100%;
+    display: inline-block;
+}
+
+input[type=text] {
+    width: 100%;
+    margin: 5px 0px;
+    padding: 5px;
+    border: 2px solid #00539CFF;
+    border-radius: 10px;
+}
+
+label {
+    font-size: 14px;
+    color: #AF4640;
+}
+
+#search-btn {
+    float: right;
+    margin-bottom: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.result-item {
+    display: flex;
+    width: 85%;
+    height: 111px;
+    margin: auto;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: 2px solid #EEA47FFF;
+    border-radius: 10px;
+    position: relative;
+    background-color: lavender;
+}
+
+.search-result i.fas {
+    padding: 0px 2px;
+    font-size: 14px;
+    color: #00539CFF;
+    transition: 0.4s;
+}
+
+.search-result i.fas:hover {
+    color: #AF4640;
+    transition: 0.4s;
+}
+
+/* Start of style for header section */
+header {
+    width: 100%;
+    height: 95px;
+    background-color: #00539CFF;
+    text-align: center;
+    position: relative;
+}
+
+/* Style for menu button */
+.menu-btn{
+    font-size: 20px;
+    color: #EEA47FFF;
+    padding: 2%;
+    margin: 20px 4.5%;
+    cursor: pointer;
+    float: left;
+}
+
+.menu-btn i {
+    font-size: 150%;
+}
+
+.unshown {
+    width: 100%;
+    background-color: #EEA47FFF;
+    display: none;
+    position: absolute;
+    z-index: 100;
+}
+
+/* Style for pop out menu */
+#hiddenMenu li{
+    padding: 3%;
+    text-align: left;
+    border-bottom: 1px solid #00539CFF;
+}
+
+#hiddenMenu li a {
+    text-transform: uppercase;
+    display: inline;
+    color: #00539CFF;
+}
+
+/* Class to mark current tab */
+#hiddenMenu li a.active, .active {
+    color: #AF4640;
+    font-weight: bold;
+}
+
+/* Style for logo in header */
+img.header-logo {
+    width: 110px;
+    display: inline-block;
+    margin: auto;
+    padding: 15px;
+    margin-left: 7%;
+}
+
+/* Style for icons in header */
+.header-icon {
+    width: 20%;
+    font-size: 22px;
+    color: #EEA47FFF;
+    padding: 20px 2%;
+    margin-top: 2%;
+    float: right;
+}
+
+.header-icon i {
+    margin: 5%;
+}
+
+/* Hide section in mobile screen size */
+header section.responsive-hide {
+    display: none;
+}
+
+/* Start of style for cover slide section */
+.cover-div {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.cover-div .cover-container {
+    width: 301%;
+    display: flex;
+}
+
+/* General style for all slides in this section */
+.cover-div .cover-container .cover-slide1, .cover-slide2, .cover-slide3 {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: left;
+}
+
+/* Set background for each slide */
+.cover-div .cover-container .cover-slide1 {
+    background-image: url("../images/cover/tamara-bellis-68csPWTnafo-unsplash.jpg");
+}
+
+.cover-div .cover-container .cover-slide2 {
+    background-image: url("../images/cover/street.jpg");
+    height: auto;
+}
+
+.cover-div .cover-container .cover-slide3 {
+    background-image: url("../images/cover/three-piece-suit.jpg");
+}
+
+/* Display info div on top */
+.cover-div .cover-container .info {
+    z-index: 2;
+}
+
+.cover-div .cover-container p {
+    margin: 5% 0%;
+}
+
+/* Styles for each info div */
+.cover-div .cover-container .cover-slide1 .info {
+    padding: 20% 5% 22% 20%;
+    text-align: right;
+}
+
+.cover-div .cover-container .cover-slide2 .info {
+    padding: 17% 20% 22% 5%;
+    text-align: left;
+}
+
+.cover-div .cover-container .cover-slide3 .info {
+    padding: 18% 0% 21% 0%;
+    text-align: center;
+}
+
+.cover-div .cover-container .cover-slide1 p, .cover-slide1 h1 {
+    color: #00539CFF;
+}
+
+.cover-slide3 p, .cover-slide3 h1, .cover-div .cover-container .cover-slide2 p, .cover-slide2 h1 {
+    color: lavender;
+}
+
+/* Style for "shop now" button  */
+.cover-div .cover-container button {
+    color: #00539CFF;
+    font-weight: bold;
+    background-color: #EEA47FFF;
+    padding: 12px 27px;
+    border: 1px solid #00539CFF;
+    border-radius: 50px;
+    transition: 0.4s;
+    outline: none;
+    cursor: pointer;
+}
+
+.cover-div .cover-container button:hover {
+    font-size: 20px;
+    color: #EEA47FFF;
+    background-color: #AF4640;
+    border: 1px solid #EEA47FFF;
+}
+
+/* Style and position for the dots to shift between slides */
+.dots {
+    position: absolute;
+    bottom: 8%;
+    width: 20%;
+    left: 43%;
+}
+
+.dot {
+    text-align: center;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #EEA47FFF;
+    border-radius: 50%;
+    border: 1px solid #00539CFF;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.current, .dot:hover {
+    background-color: #00539CFF;
+}
+
+/* Start of style for introduction section */
+/* General style for main and introduction section */
+main, .introduction {
+    background-color: lavender;
+    padding: 5%;
+}
+
+main {
+    padding-top: 2.5%;
+}
+
+.introduction {
+    padding-bottom: 2.5%;
+    position: relative;
+}
+
+/* Set position for date to display */
+#today {
+    position: absolute;
+    right: 10px;
+    top: 2px;
+}
+
+/* Common style for containers in the main and introduction section */
+.blue-shadow {
+    color: #EEA47FFF;
+    line-height: 25px;
+    margin-bottom: 5%;
+    padding: 5%;
+    box-shadow: 2px 2px 2px #00539CFF;
+    background-image: url("../images/cover/background.jpg");
+    background-size: cover;
+}
+
+.blue-shadow:last-child {
+    margin-bottom: 0%;
+}
+
+/* Start of style for currency part */
+/* Resize hr in currency section */
+.currency hr {
+    margin-bottom: 6px;
+    width: 80px;
+}
+
+.currency-display {
+    width: 100%;
+    padding: 2%;
+    max-height: 25px;
+}
+
+.currency p {
+    color: #AF4640;
+    display: block;
+    width: 100%;
+    font-size: 17px;
+}
+
+#currency {
+    background-color: lavender;
+    color: #AF4640;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 1px solid #AF4640;
+    border-radius: 10px;
+    padding: 1% 2%;
+    font-size: 15px;
+    outline: none;
+}
+
+select {
+    cursor: pointer;
+}
+
+/* Hide div in mobile screen size */
+.currency .zoom-container {
+    display: none;
+}
+
+/* Set size for flag image */
+#country {
+    width: 25px;
+    margin: -6px;
+    margin-right: 5px;
+}
+
+/* Start of style for service part */
+.services {
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.services .fas, .services .fab {
+    color: #00539CFF;
+    font-size: 25px;
+}
+
+.service-top, .service-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.services .service-right, .services .service-left {
+    padding: 5%;
+    width: 50%;
+}
+
+.service-top .service-right, .service-top .service-left {
+    border-bottom: 1px solid #00539CFF;
+}
+
+.services .service-left {
+    border-right: 1px solid #00539CFF;
+}
+
+/* Start of style for bestseller part */
+.best-seller {
+    max-width: 100%;
+}
+
+.products {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.best-seller .item-slide {
+    width: 450%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item {
+    max-width: 45%;
+    display: block;
+    cursor: pointer;
+}
+
+.item img {
+    width: 90%;
+    margin: 5%;
+    display: block;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: 0.5s;
+}
+
+.item:hover img {
+    border: 1px solid #AF4640;
+    transition: 0.5s;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 42%;
+    width: auto;
+    height: auto;
+    padding: 3%;
+    color: #00539CFF;
+    background-color: #EEA47FFF;
+    font-weight: bold;
+    font-size: 150%;
+    transition: 0.6s ease;
+    border-radius: 10px;
+    user-select: none;
+    text-align: center;
+}
+
+.prev:hover, .next:hover {
+    color: lavender;
+    background-color: #AF4640;
+}
+
+.next {
+    right: 0%;
+}
+
+.prev {
+    left: 0%;
+    visibility: hidden;
+}
+
+/* Start of style for categories part */
+.categories {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.categories .category {
+    width: 100%;
+    display: block;
+    border: 1px solid #00539CFF;
+    text-align: center;
+    transition: 0.8s;
+}
+
+.zoom-container {
+    width: 100%;
+    margin-bottom: 5%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.zoom-container:last-child {
+    margin-bottom: 0%;
+}
+
+.zoom-container:hover .category {
+    transform: scale(1.1);
+    transition: 0.8s;
+}
+
+.categories .category:last-child {
+    margin-bottom: 0%;
+}
+
+.zoom-container h2 {
+    width: auto;
+    bottom: 15%;
+    left: 5%;
+    position: absolute;
+    padding: 1%;
+    color: lavender;
+    border: 2px solid lavender;
+    display: inline-block;
+    z-index: 1;
+}
+
+/* Start of main section */
+
+#kids, #men, #women {
+    background-size: cover;
+    background-position-y: center;
+    padding: 30% 0%;
+    width: 99%;
+    border-radius: 10px;
+}
+
+/* Set background for divs in categories section */
+#men {
+    background-image: url("../images/cover/men.jpg");
+}
+
+#women {
+    background-image: url("../images/cover/women.jpg");
+}
+
+#kids {
+    background-image: url("../images/cover/kids.jpg");
+}
+
+/* Hide view category block */
+.view-category {
+    display: none;
+    position: relative;
+}
+
+/* Style for close button */
+.close {
+    cursor: pointer;
+}
+
+.close:hover i.fas {
+    color: #AF4640;
+}
+
+.close i.fas {
+    font-size: 30px;
+    color: #00539CFF;
+    position: absolute;
+    right: 25px;
+    top: 15px;
+}
+
+/* Style for table */
+.table-container {
+    width: 100%;
+    /* display: flex;
+    justify-content: center; */
+    overflow-x: scroll;
+}
+
+table, th, td {
+    border: 1px solid #EEA47FFF;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    overflow: scroll;
+}
+
+th {
+    color: #00539CFF;
+}
+
+th.cellName {
+    min-width: 100px;
+}
+
+th.cellId {
+    min-width: 60px;
+}
+
+th.cellPrice {
+    min-width: 85px;
+}
+
+th.cellQuantity {
+    min-width: 45px;
+}
+
+th.cellMax {
+    max-width: 80px;
+}
+
+th.cellDescription {
+    min-width: 300px;
+}
+
+th.cellReviews {
+    min-width: 165px;
+}
+
+th.cellImage {
+    min-width: 50px;
+}
+
+th.cellIcon {
+    min-width: 90px;
+}
+
+td {
+    color: #AF4640;
+}
+
+td a {
+    margin: 0px 4px;
+    color: #00539CFF;
+}
+
+td i.fas {
+    color: #AF4640;
+    transition: 0.4s;
+}
+
+td i.fas:hover {
+    color: #00539CFF;
+    transition: 0.4s;
+}
+
+#category-to-display img {
+    width: 50px;
+    height: 65px;
+}
+
+/* Start of style for men fashion, women fashion and kids fashion part */
+.men-fashion .products {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.category-products {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 2.5%;
+}
+
+.category-products .item {
+    max-width: 50%;
+}
+
+.category-products .item:hover img {
+    border: 1px solid #AF4640;
+    transition: 0.5s;
+}
+
+.item .item-info {
+    text-align: center;
+}
+
+.item .item-info img {
+    width: 50%;
+    margin: auto;
+}
+
+.item .item-info i.fas {
+    color: #AF4640;
+    font-size: 16px;
+    margin: 2% 3%;
+    transition: 0.4s;
+}
+
+.item .item-info i.fas:hover {
+    color: #00539CFF;
+}
+
+.item .item-info p {
+    font-size: 17px;
+    color: #00539CFF;
+}
+
+/* Start of style for footer section */
+/* Start of style for subscribe section */
+.subscribe {
+    width: 90%;
+    height: 170px;
+    padding: 5%;
+    background-color: #00539CFF;
+    color: #EEA47FFF;
+} 
+
+.subscribe .subscription {
+    height: 120px;
+}
+
+.subscription h2, .subscription p {
+    color: #EEA47FFF;
+}
+
+.subscription p {
+    padding-top: 3%;
+}
+
+.subscribe .submission {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.subscribe .submission input {
+    padding: 10px 20px;
+    display: block;
+    width: 75%;
+    font-size: 15px;
+    height: 19px;
+    border: 1px solid #EEA47FFF;
+    border-radius: 50px;
+}
+
+.subscribe .submission button {
+    color: #00539CFF;
+    font-weight: bold;
+    background-color: #EEA47FFF;
+    padding: 12px 27px;
+    border: none;
+    border-radius: 50px;
+    margin-left: -10%;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Style for footer about us section */
+img.footer-logo {
+    width: 22%;
+    display: inline-block;
+    margin: 3% 6%;
+}
+
+.description, .copyright p {
+    margin: -2% 6% 0% 6%;
+}
+
+.footer-title{
+    color: #00539CFF;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* Style for social media icons */
+.media {
+    margin: 6%;
+    color: #AF4640;
+}
+
+.social-media {
+    width: 100%;
+    margin: 20px 0%;
+}
+
+.social-media i.fab {
+    height: 13px;
+    width: 14px;
+    padding: 13px;
+    margin: 2% 3% 0% 0%;
+    text-align: center;
+    font-size: 16px;
+    border: 2px solid #AF4640;
+    border-radius: 50px;
+    transition: 0.4s;
+}
+
+.social-media i.fab:hover {
+    color: #00539CFF;
+    border: 2px solid #00539CFF;
+    transition: 0.4s;
+}
+
+.service-menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-menu {
+    width: 36%;
+    padding: 4% 7%;
+    line-height: 130%;
+    color: #AF4640;
+}
+
+.footer-menu a {
+    color: #AF4640;
+    transition: color 0.4s;
+}
+
+.footer-menu a:hover {
+    color: #00539CFF;
+    text-decoration: none;
+}
+
+.contact-info {
+    font-size: 16.5px;
+}
+
+/* Start of copyright section */
+.copyright {
+    padding: 10px 0px 0px 0px;
+}
+
+.copyright p {
+    color: #EEA47FFF;
+    font-size: 11px;
+    padding: 3px;
+}
+
+section.copyright {
+    background-color: #00539CFF;
+    color: #EEA47FFF;
+    display: block;
+    text-align: center;
+    width: 105%;
+    position: absolute;
+    left: -5%;
+}
+
+section.copyright img {
+    width: 6%;
+    margin: 2% 1%;
+    border: 1px solid #EEA47FFF;
+}
+
+/* Class to pop out menu */
+.show {
+    display: block;
+}
+
+/* Styles for screen size from 600px */
+@media only screen and (min-width: 600px) {
+    /* Resize hr element */
+    hr {
+        width: 120px;
+    }
+    
+    /* Style for header */
+    .menu-btn {
+        margin: 15px 4.5%;
+    }
+
+    /* Start of style for cover slide section */
+    .cover-div .cover-container {
+        height: 450px;
+    }
+
+    .cover-slide1 p, .cover-slide2 p, .cover-slide3 p {
+        font-size: 17px;
+    }
+
+    .cover-div .cover-container .cover-slide1 .info {
+        padding: 130px 40px;
+    }
+    
+    .cover-div .cover-container .cover-slide2 .info, .cover-div .cover-container .cover-slide3 .info {
+        padding: 135px 40px;
+    }
+    
+    .cover-slide1 h1, .cover-slide2 h1, .cover-slide3 h1 {
+        font-size: 35px;
+    }
+
+    /* Set position for date to display */
+    #today {
+    top: 5px;
+    }
+
+    /* Resize serach item */
+    .result-item {
+        width: 70%;
+    }
+
+    /* Style for icons in service section */
+    .services .fas, .services .fab {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    /* Resize h2 in categories section */
+    .zoom-container h2 {
+        font-size: 35px;
+        padding: 7px;
+    }
+    
+    /* Style for submission text input */
+    .subscribe .submission input {
+        width: 90%;
+    }
+
+    /* Padding top for copyright paragraph element */
+    .copyright p {
+        padding-top: 10px;
+    }
+}
+
+/* Styles for screen size from 768px */
+@media only screen and (min-width: 768px) {
+    /* Resize arrow to top div */
+    #to-top {
+        opacity: 0;
+        padding: 13px 15px;
+        z-index: 99;
+    }
+
+    /* Resize h3 elements */
+    h2 {
+        font-size: 25px;
+        margin-bottom: 7px;
+    }
+
+    /* Start of style for header section */
+    header {
+        margin-top: 100px;
+        height: 55px;
+    }
+
+    /* Hide menu button */
+    .menu-btn {
+        display: none;
+    }
+
+    /* Display nav element */
+    header section.responsive-hide {
+        display: block;
+    }
+
+    .contact-icon {
+        text-align: left;
+        display: inline-block;
+        width: 310px;
+        position: absolute;
+        left: 15px;
+        top: -78px;
+    }
+
+    header section.responsive-hide .contact-icon a, header section.responsive-hide .contact-icon i {
+        color: #00539CFF;
+        transition: 0.4s;
+    }
+
+    header section.responsive-hide .contact-icon a:hover{
+        color: #EEA47FFF;
+        transition: 0.4s;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+        color: #EEA47FFF;
+    }
+
+    nav a {
+        color: #EEA47FFF;
+        width: 130px;
+        margin-top: 5px;
+        padding: 10px;
+        display: block;
+        font-size: 16px;
+        font-weight: bold;
+        transition: 0.4s;
+    }
+
+    nav a:hover {
+        color: #AF4640;
+        transition: 0.4s;
+    }
+
+    /* Style for logo image on top */
+    img.header-logo {
+        width: 145px;
+        position: absolute;
+        margin-left: 0%;
+        top: -107px;
+        left: 45%;
+    }
+
+    /* Style for header icon div */
+    .header-icon {
+        position: absolute;
+        bottom: 70px;
+        width: 10%;
+        padding: 15px;
+        margin-top: 2%;
+        right: 10px;
+    }
+
+    /* Style for icons inside header icon div */
+    .header-icon i.fa, .header-icon i.fas {
+        font-size: 22px;
+        color: #00539CFF;
+        cursor: pointer;
+        transition: color 0.4s;
+    }
+
+    .header-icon i.fa:hover, .header-icon i.fas:hover {
+        color: #EEA47FFF;
+        transition: 0.4s;
+    }
+
+    /* Start of style for cart div */
+    /* Style for container div */
+    .cart {
+        width: 500px;
+        padding: 3%;
+        margin-left: -250px;
+    }
+ 
+    /* Start of style for search section */
+    #search-input {
+        width: 35%;
+    }
+
+    .search-result {
+        width: 55%;
+        float: right;
+    }
+
+    /* Style for service block */
+    .services {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .services .fas, .services .fab {
+        font-size: 22px;
+    }
+    
+    .services h4 {
+        font-size: 17px;
+    }
+
+    .services p {
+        font-size: 12px;
+    }
+    
+    .services .service-right, .services .service-left {
+        padding: 0%;
+        width: 50%;
+    }
+    
+    .service-top .service-right, .service-top .service-left {
+        border-bottom: none;
+    }
+    
+    .service-top .service-right {
+        border-right: 1px solid #00539CFF;
+    }
+
+    /* Resize h2 in categories section */
+    .zoom-container h2 {
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    /* Set position for date to display */
+    #today {
+    top: 9px;
+    }
+
+    /* Style for submission text input */
+    .subscribe {
+        display: flex;
+        height: 130px;
+        padding-top: 3%;
+    }
+
+    .subscribe .subscription {
+        width: 35%;
+    }
+
+    .subscribe .subscription p{
+        margin-right: 5%;
+    }
+
+    .subscribe .submission {
+        width: 60%;
+    }
+
+    .subscribe .submission input {
+        margin-top: 51px;
+    }
+
+    .subscribe .submission button {
+        margin: 46px 0px 33px -40px;
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .description {
+        font-size: 15px;
+    }
+
+    /* Style for footer about us section */
+    img.footer-logo {
+        width: 16%;
+    }
+
+    /* Reset margin bottom of media container */
+    .media {
+        margin-bottom: 0%;
+    }
+
+    .service-menu {
+        display: flex;
+        padding: 1% 4%;
+        width: 92%;
+    }
+
+    .footer-menu {
+        width: 19%;
+        padding: 2%;
+    }
+    /* Start of copyright block */
+    section.copyright {
+        height: 56px;
+        left: 0;
+        padding: 15px 0px 0px 0px;
+        width: auto;
+    }
+    
+    .copyright p {
+        font-size: 11px;
+        padding-top: 15px;
+    }
+
+    section.copyright img {
+        width: 3%;
+        margin: 1%;
+    }
+}
+
+/* Styles for screen size from 992px */
+@media only screen and (min-width: 992px) { 
+    /* Resize h3 elements */
+    h2 {
+        font-size: 22px;
+    }
+
+    /* Start of style for main section */
+    /* General style for main and introduction section */
+    main, .introduction {
+        background-color: lavender;
+        padding: 2%;
+    }
+    
+    main {
+        padding-top: 1%;
+    }
+
+    /* General font size for paragraph element */
+    p {
+        font-size: 15px;
+    }
+
+    /* Start of style for header section */
+    /* Hide menu button */
+    .menu-btn {
+        display: none;
+    }
+
+    /* Display nav element */
+    .contact-icon {
+        left: 30px;
+    }
+
+    nav a {
+        padding: 10px 20px;
+        font-size: 20px;
+    }
+
+    /* Style for logo image on top */
+    img.header-logo {
+        width: 155px;
+        top: -111px;
+    }
+
+    /* Style for icons on top */
+    .header-icon {
+        width: 10%;
+    }
+
+    /* Style for block with blue shadow */
+    .blue-shadow {
+        padding: 3%;
+        margin-bottom: 2%;
+    }
+
+    /* Start of style for search section */
+    #search-input {
+        width: 38%;
+    }
+
+    .search-result {
+        width: 55%;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    #search-btn {
+        margin-bottom: 15px;
+    }
+
+    .search-result i.fas {
+        font-size: 15px;
+    }
+
+    /* Start of style for introduction part */
+    .introduction {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cover-div .cover-container {
+        height: 580px;
+    }
+
+    .cover-div .cover-container .cover-slide1 .info {
+        padding: 200px 50px;
+    }
+
+    .cover-slide1 h1, .cover-slide2 h1, .cover-slide3 h1 {
+        font-size: 45px;
+    }
+
+    .cover-slide1 p, .cover-slide2 p, .cover-slide3 p {
+        font-size: 20px;
+    }
+
+    .cover-div .cover-container button {
+        font-size: 20px;
+    }
+
+    .prev, .next {
+        padding: 2.5% 2%;
+        font-size: 200%;
+    }
+
+    /* Style for currency block */
+    .currency {
+        width: 22%;
+        order: 3;
+        margin-bottom: 0%;
+    }
+
+    .currency-display {
+        width: 50%;
+        margin: auto;
+        padding-top: 10%;
+    }
+
+    .zoom-container h2 {
+        font-size: initial;
+        padding: 1%;
+    }
+
+    .currency .zoom-container {
+        display: block;
+        width: 100%;
+        margin-top: 15%;
+        transition: 0.4s;
+    }
+
+    .currency .zoom-container h2 {
+        color: #AF4640;
+        border-color: #AF4640;
+        bottom: 10%;
+    }
+
+    .currency .zoom-container:hover {
+        border: 1px solid #AF4640;
+        transition: 0.4s;
+    }
+    
+    .store {
+        background-image: url(../images/cover/store.jpg);
+        cursor: pointer;
+        background-size: cover;
+        background-position: center;
+        padding: 125px 0px;
+        width: 99%;
+        height: 1%;
+        border-radius: 10px;
+        border: 1px solid #AF4640;
+        transition: transform 0.4s;
+    }
+
+    .store:hover {
+        transform: scale(1.1);
+        transition: 0.4s;
+    }
+
+    /* Style for service block */
+    .services {
+        width: 100%;
+    }
+    
+    .services .fas, .services .fab {
+        font-size: 25px;
+    }
+    
+    .services h4 {
+        font-size: 20px;
+    }
+
+    .services p {
+        font-size: 14px;
+    }
+
+    /* Style for best seller block */
+    .best-seller {
+        max-width: 64%;
+        margin-right: 2%;
+    }
+
+    /* Set position for date to display */
+    #today {
+    top: 0px;
+    }
+
+    /* Start of style for categories section */
+    .categories {
+        justify-content: space-between;
+        width: 94%;
+    }
+
+    .categories .category {
+        width: 32%;
+    }
+
+    .zoom-container {
+        width: 32%;
+        margin-bottom: 0;
+    }
+
+    /* Start of style for category products section */
+    .category-products {
+        padding: 1.5% 0%;
+        justify-content: space-between;
+    }
+
+    .category-products .item {
+        max-width: 16%;
+    }
+
+    /* Start of style for footer section */
+    /* Style for submission text input */
+    .subscribe {
+        height: 80px;
+    }
+
+    .subscribe .subscription {
+        width: 40%;
+    }
+
+    .subscribe .submission input {
+        margin-top: 19.5px;
+    }
+
+    .subscribe .submission button {
+        margin: 15px 0px 15px -40px;
+    }
+
+    /* Style for media div */
+    .media {
+        margin: 2% 6%;
+    }
+    
+    .social-media i.fab {
+        margin: 2% 3% 0% 0%;
+    }
+    
+    .about-us {
+        display: flex;
+    }
+
+    .footer-right {
+        width: 35%;
+        margin-right: 2%;
+    }
+
+    img.footer-logo {
+        width: 50%;
+    }
+
+    .service-menu {
+        padding: 6% 0% 3% 0%;
+    }
+
+    .footer-menu {
+        width: 21%;
+        padding: 3% 2%;
+    }
+    
+    .footer-title {
+        margin: 5% 0%;
+    }
+    
+    /* Start of copyright block */
+    section.copyright {
+        padding: 10px 0px 0px 0px;
+        height: 70px;
+    }
+    
+    .copyright p {
+        font-size: 11px;
+        padding-top: 25px;
+    }
+
+    section.copyright img {
+        width: 3%;
+        margin: 1%;
+        border: 1px solid #EEA47FFF;
+    }
+}
+
+/* Styles for screen size from 1200px */
+@media only screen and (min-width: 1200px) {
+
+    /* Start of style for search section */
+    label {
+        font-size: 17px;
+    }
+    
+    .search-result i.fas {
+        font-size: 17px;
+    }
+
+    /* Style for zoom-container class in currency section */
+    .zoom-container h2 {
+        font-size: 20px;
+        padding: 1%;
+    }
+
+    .store {
+        padding: 170px 0px;
+    }
+
+    /* Start of copyright block */
+    section.copyright {
+        padding: 10px 0px 0px 0px;
+        height: 80px;
+        width: 100%;
+    }
+}
